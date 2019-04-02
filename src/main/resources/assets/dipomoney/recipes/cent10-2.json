@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": [
+            {
+                "item": "dipomoney:cent50"
+            }
+        ]
+    },
+
+    "result": 
+    {
+                "item": "dipomoney:cent10",
+                "count": 5
+    }
+}

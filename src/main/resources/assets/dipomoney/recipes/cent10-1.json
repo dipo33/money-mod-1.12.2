@@ -1,0 +1,14 @@
+{ 
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dipomoney:cent5"
+	      },
+        {
+            "item": "dipomoney:cent5"
+	      }
+    ],
+    "result": {
+        "item": "dipomoney:cent10"
+    }
+}
