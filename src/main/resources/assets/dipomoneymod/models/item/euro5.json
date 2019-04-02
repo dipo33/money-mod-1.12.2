@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dipomoney:items/euro5"
+        "layer0": "dipomoneymod:items/euro5"
     }
 }

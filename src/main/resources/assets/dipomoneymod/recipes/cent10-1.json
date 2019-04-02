@@ -2,13 +2,13 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "dipomoney:cent5"
+            "item": "dipomoneymod:cent5"
 	      },
         {
-            "item": "dipomoney:cent5"
+            "item": "dipomoneymod:cent5"
 	      }
     ],
     "result": {
-        "item": "dipomoney:cent10"
+        "item": "dipomoneymod:cent10"
     }
 }

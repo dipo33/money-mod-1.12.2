@@ -6,14 +6,14 @@
     "key": {
         "#": [
             {
-                "item": "dipomoney:euro100"
+                "item": "dipomoneymod:euro100"
             }
         ]
     },
 
     "result": 
     {
-                "item": "dipomoney:euro50",
+                "item": "dipomoneymod:euro50",
                 "count": 2
     }
 }
