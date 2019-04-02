@@ -1,4 +1,4 @@
-package sk.psuchtak.money;
+package sk.dipo.money;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
