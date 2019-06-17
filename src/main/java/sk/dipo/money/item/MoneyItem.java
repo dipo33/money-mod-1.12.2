@@ -11,7 +11,7 @@ public class MoneyItem extends Item implements IHasModel {
 		setRegistryName(name);
 		setCreativeTab(CreativeTabs.MISC);
 
-		MoneyMod.ITEMS.add(this);
+		MoneyItems.ITEMS.add(this);
 	}
 
 	@Override
