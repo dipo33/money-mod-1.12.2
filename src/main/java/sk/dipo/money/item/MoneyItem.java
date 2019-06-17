@@ -1,7 +1,8 @@
-package sk.dipo.money;
+package sk.dipo.money.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import sk.dipo.money.MoneyMod;
 
 public class MoneyItem extends Item implements IHasModel {
 

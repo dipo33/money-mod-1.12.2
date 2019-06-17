@@ -1,10 +1,13 @@
-package sk.dipo.money;
+package sk.dipo.money.handler;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import sk.dipo.money.MoneyMod;
+import sk.dipo.money.item.IHasModel;
+import sk.dipo.money.utils.Reference;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class RegistryHandler {

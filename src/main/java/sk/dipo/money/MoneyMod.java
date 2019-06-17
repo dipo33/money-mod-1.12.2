@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
+import sk.dipo.money.item.MoneyItem;
+import sk.dipo.money.proxy.CommonProxy;
+import sk.dipo.money.utils.Reference;
 import net.minecraftforge.fml.common.SidedProxy;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)

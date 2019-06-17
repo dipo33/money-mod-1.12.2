@@ -1,4 +1,4 @@
-package sk.dipo.money;
+package sk.dipo.money.proxy;
 
 import net.minecraft.item.Item;
 
