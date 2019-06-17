@@ -1,5 +1,6 @@
 package sk.dipo.money;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -14,4 +15,6 @@ public class MoneyMod {
 
 	@Instance
 	public static MoneyMod instance = new MoneyMod();
+
+	public static CreativeTabs moneyTab = new MoneyTab();
 }

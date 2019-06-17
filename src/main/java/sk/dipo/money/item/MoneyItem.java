@@ -1,6 +1,5 @@
 package sk.dipo.money.item;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import sk.dipo.money.MoneyMod;
 
@@ -9,7 +8,7 @@ public class MoneyItem extends Item implements IHasModel {
 	public MoneyItem(String name) {
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(CreativeTabs.MISC);
+		setCreativeTab(MoneyMod.moneyTab);
 
 		MoneyItems.ITEMS.add(this);
 	}
