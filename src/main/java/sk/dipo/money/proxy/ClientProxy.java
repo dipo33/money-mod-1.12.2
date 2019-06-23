@@ -11,4 +11,9 @@ public class ClientProxy extends CommonProxy {
 		System.out.println(item.getUnlocalizedName() + " " + item.getRegistryName() + " " + item.toString());
 		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
 	}
+	
+	@Override
+	public void init() {
+		super.init();
+	}
 }
