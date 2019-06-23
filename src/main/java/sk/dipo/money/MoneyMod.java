@@ -2,8 +2,10 @@ package sk.dipo.money;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import sk.dipo.money.proxy.CommonProxy;
 import sk.dipo.money.utils.Reference;
 
@@ -17,4 +19,9 @@ public class MoneyMod {
 	public static MoneyMod instance = new MoneyMod();
 
 	public static CreativeTabs moneyTab = new MoneyTab();
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		proxy.init();
+	}
 }
