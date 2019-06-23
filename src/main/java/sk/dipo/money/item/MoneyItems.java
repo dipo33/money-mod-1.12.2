@@ -23,6 +23,8 @@ public class MoneyItems {
 	public static final Item euro100;
 	public static final Item euro200;
 	public static final Item euro500;
+
+	public static final Item wallet;
 	
 	static {
 		cent1 = new MoneyItem("cent1");
@@ -40,5 +42,7 @@ public class MoneyItems {
 		euro100 = new MoneyItem("euro100");
 		euro200 = new MoneyItem("euro200");
 		euro500 = new MoneyItem("euro500");
+		
+		wallet = new ItemWallet("wallet");
 	}
 }
