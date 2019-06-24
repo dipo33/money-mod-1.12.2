@@ -13,5 +13,6 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		OreDicts.registerOreDicts();
 		CommonRegisters.registerHandlers();
+			MoneyVillager.associateCareersAndTrades();
 	}
 }

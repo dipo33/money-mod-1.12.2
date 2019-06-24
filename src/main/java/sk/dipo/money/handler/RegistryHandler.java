@@ -25,4 +25,12 @@ public class RegistryHandler {
 			}
 		}
 	}
+
+	@SubscribeEvent
+	public static void onVillagerRegister(final RegistryEvent.Register<VillagerProfession> event) {
+		final IForgeRegistry<VillagerProfession> registry = event.getRegistry();
+
+			registry.register(new VillagerProfession(Reference.MODID + ":exchanger", Reference.MODID + ":textures/entity/exchanger.png",
+					Reference.MODID + ":textures/entity/exchanger.png"));
+	}
 }

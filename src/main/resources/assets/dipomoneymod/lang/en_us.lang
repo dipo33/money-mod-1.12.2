@@ -15,4 +15,6 @@ item.euro200.name=200,00€
 item.euro500.name=500,00€
 item.wallet.name=Wallet
 
-itemGroup.money_tab=Dipo's Money Mod
+itemGroup.money_tab=Dipo's Money ModitemGroup.money_tab=Dipo's Money Mod
+
+entity.Villager.exchanger=Exchanger
