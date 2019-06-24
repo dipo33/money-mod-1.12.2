@@ -41,4 +41,10 @@ public class GuiWallet extends GuiContainer {
 		this.drawTexturedModalRect(k, l - 1, 0, 0, this.xSize, 71);
 		this.drawTexturedModalRect(k, l + 70, 0, 126, this.xSize, 96);
 	}
+	
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+		super.drawScreen(mouseX, mouseY, partialTicks);
+		this.renderHoveredToolTip(mouseX, mouseY);
+	}
 }
