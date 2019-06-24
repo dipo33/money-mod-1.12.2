@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import sk.dipo.money.proxy.CommonProxy;
 import sk.dipo.money.utils.Reference;
 
@@ -19,7 +20,12 @@ public class MoneyMod {
 	public static MoneyMod instance = new MoneyMod();
 
 	public static CreativeTabs moneyTab = new MoneyTab();
-	
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		proxy.preInit(event);
+	}
+
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
