@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfessio
 import net.minecraftforge.registries.IForgeRegistry;
 import sk.dipo.money.item.IHasModel;
 import sk.dipo.money.item.MoneyItems;
+import sk.dipo.money.utils.Config;
 import sk.dipo.money.utils.Reference;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID)
@@ -32,6 +33,7 @@ public class RegistryHandler {
 	public static void onVillagerRegister(final RegistryEvent.Register<VillagerProfession> event) {
 		final IForgeRegistry<VillagerProfession> registry = event.getRegistry();
 
+		if (Config.allowVillager)
 			registry.register(new VillagerProfession(Reference.MODID + ":exchanger", Reference.MODID + ":textures/entity/exchanger.png",
 					Reference.MODID + ":textures/entity/exchanger.png"));
 	}

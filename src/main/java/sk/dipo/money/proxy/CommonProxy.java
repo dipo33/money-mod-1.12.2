@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import sk.dipo.money.entity.MoneyVillager;
 import sk.dipo.money.register.CommonRegisters;
 import sk.dipo.money.register.OreDicts;
+import sk.dipo.money.utils.Config;
 
 public class CommonProxy {
 
@@ -19,6 +20,7 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		OreDicts.registerOreDicts();
 		CommonRegisters.registerHandlers();
+		if (Config.allowVillager)
 			MoneyVillager.associateCareersAndTrades();
 	}
 }
