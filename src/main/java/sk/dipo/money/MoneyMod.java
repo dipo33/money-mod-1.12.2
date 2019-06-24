@@ -22,6 +22,6 @@ public class MoneyMod {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		proxy.init();
+		proxy.init(event);
 	}
 }
