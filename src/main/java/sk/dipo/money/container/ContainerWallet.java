@@ -53,7 +53,7 @@ public class ContainerWallet extends Container {
 
 			if (index < INV_START) {
 				if (!this.mergeItemStack(itemstack1, INV_START, HOTBAR_END + 1, true)) {
-					return null;
+					return ItemStack.EMPTY;
 				}
 
 				slot.onSlotChange(itemstack1, itemstack);
@@ -61,7 +61,7 @@ public class ContainerWallet extends Container {
 				SlotWallet slotOut = (SlotWallet) this.inventorySlots.get(0);
 				if (slotOut.isItemValid(itemstack1)) {
 					if (!this.mergeItemStack(itemstack1, 0, INV_START, false)) {
-						return null;
+						return ItemStack.EMPTY;
 					}
 				}
 			}
@@ -73,7 +73,7 @@ public class ContainerWallet extends Container {
 			}
 
 			if (itemstack1.getCount() == itemstack.getCount()) {
-				return null;
+				return ItemStack.EMPTY;
 			}
 
 			slot.onTake(player, itemstack1);
