@@ -5,6 +5,8 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession;
+import net.minecraftforge.registries.IForgeRegistry;
 import sk.dipo.money.item.IHasModel;
 import sk.dipo.money.item.MoneyItems;
 import sk.dipo.money.utils.Reference;
