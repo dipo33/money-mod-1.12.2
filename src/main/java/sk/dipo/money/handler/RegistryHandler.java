@@ -18,7 +18,7 @@ public class RegistryHandler {
 	}
 
 	@SubscribeEvent
-	public static void onModelRegistry(ModelRegistryEvent event) {
+	public static void onModelRegister(ModelRegistryEvent event) {
 		for (Item item : MoneyItems.ITEMS) {
 			if (item instanceof IHasModel) {
 				((IHasModel) item).registerModels();
