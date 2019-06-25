@@ -1,8 +1,13 @@
 package sk.dipo.money.utils;
 
+import java.util.ArrayList;
+import java.util.Random;
+
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import sk.dipo.money.item.MoneyItems;
 
@@ -53,5 +58,26 @@ public class Utils {
 		}
 
 		return null;
+	}
+
+	public static ArrayList<EntityItem> randomCoinValue(LivingDropsEvent event, int low, int high) {
+		ArrayList<EntityItem> itemsToDrop = new ArrayList<EntityItem>();
+		int value = new Random().nextInt(high - low + 1);
+		value += low;
+		System.out.println(value);
+		int coins[] = { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 };
+		while (value > 0) {
+			for (int coin : coins) {
+				if (coin <= value) {
+					value -= coin;
+					ItemStack drop = new ItemStack(getCoinByValue(coin), 1);
+					itemsToDrop.add(
+							new EntityItem(event.getEntity().getEntityWorld(), event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ, drop));
+					break;
+				}
+			}
+		}
+
+		return itemsToDrop;
 	}
 }
