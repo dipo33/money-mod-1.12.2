@@ -16,6 +16,8 @@ item.euro500.name=500,00€
 item.wallet.name=Wallet
 item.credit_card.name=Credit Card
 
+tile.atm.name=ATM Machine
+
 itemGroup.money_tab=Dipo's Money Mod
 
 entity.Villager.exchanger=Exchanger

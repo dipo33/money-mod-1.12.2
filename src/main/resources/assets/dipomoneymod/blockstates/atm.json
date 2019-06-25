@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "dipomoneymod:atm" },
+        "facing=south": { "model": "dipomoneymod:atm", "y": 180 },
+        "facing=west":  { "model": "dipomoneymod:atm", "y": 270 },
+        "facing=east":  { "model": "dipomoneymod:atm", "y": 90 }
+    }
+}
