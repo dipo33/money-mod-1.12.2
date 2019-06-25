@@ -4,6 +4,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import sk.dipo.money.MoneyMod;
 import sk.dipo.money.handler.CapabilityHandler;
+import sk.dipo.money.handler.EventHandlerDipo;
 import sk.dipo.money.handler.GuiHandler;
 
 public class CommonRegisters {
