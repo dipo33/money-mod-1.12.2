@@ -25,6 +25,7 @@ public class MoneyItems {
 	public static final Item euro500;
 
 	public static final Item wallet;
+	public static final Item creditCard;
 	
 	static {
 		cent1 = new MoneyItem("cent1");
@@ -44,5 +45,6 @@ public class MoneyItems {
 		euro500 = new MoneyItem("euro500");
 		
 		wallet = new ItemWallet("wallet");
+		creditCard = new ItemCreditCard("credit_card");
 	}
 }
