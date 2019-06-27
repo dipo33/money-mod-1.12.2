@@ -15,6 +15,7 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import sk.dipo.money.tileentity.TileEntityATM;
 
 public class BlockATM extends MoneyBlock implements ITileEntityProvider {
 
@@ -27,7 +28,7 @@ public class BlockATM extends MoneyBlock implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return null; // TODO return TileEntity when we create it
+		return new TileEntityATM();
 	}
 
 	@Override
@@ -70,6 +71,10 @@ public class BlockATM extends MoneyBlock implements ITileEntityProvider {
 	@Override
 	public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 		world.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
+		TileEntity atm = world.getTileEntity(pos);
+
+		if (atm instanceof TileEntityATM)
+			((TileEntityATM) atm).setCustomName(stack.getDisplayName());
 	}
 
 	public IBlockState getStateFromMeta(int meta) {

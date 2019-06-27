@@ -80,4 +80,64 @@ public class Utils {
 
 		return itemsToDrop;
 	}
+
+	public static ArrayList<ItemStack> getItemStacksByValue(int value) {
+		ArrayList<ItemStack> items = new ArrayList<ItemStack>();
+		int coins[] = { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 };
+
+		for (int coin : coins) {
+			int temp = 0;
+			while (true) {
+				if (coin <= value) {
+					value -= coin;
+					temp++;
+				} else {
+					if (temp != 0) {
+						ItemStack stack = new ItemStack(getCoinByValue(coin), temp);
+						items.add(stack);
+					}
+					break;
+				}
+			}
+		}
+
+		return items;
+	}
+
+	public static int getValueByMoney(ItemStack item) {
+		if (item == null)
+			return 0;
+		else if (item.getItem() == MoneyItems.cent1)
+			return item.getCount() * 1;
+		else if (item.getItem() == MoneyItems.cent2)
+			return item.getCount() * 2;
+		else if (item.getItem() == MoneyItems.cent5)
+			return item.getCount() * 5;
+		else if (item.getItem() == MoneyItems.cent10)
+			return item.getCount() * 10;
+		else if (item.getItem() == MoneyItems.cent20)
+			return item.getCount() * 20;
+		else if (item.getItem() == MoneyItems.cent50)
+			return item.getCount() * 50;
+		else if (item.getItem() == MoneyItems.euro1)
+			return item.getCount() * 100;
+		else if (item.getItem() == MoneyItems.euro2)
+			return item.getCount() * 200;
+		else if (item.getItem() == MoneyItems.euro5)
+			return item.getCount() * 500;
+		else if (item.getItem() == MoneyItems.euro10)
+			return item.getCount() * 1000;
+		else if (item.getItem() == MoneyItems.euro20)
+			return item.getCount() * 2000;
+		else if (item.getItem() == MoneyItems.euro50)
+			return item.getCount() * 5000;
+		else if (item.getItem() == MoneyItems.euro100)
+			return item.getCount() * 10000;
+		else if (item.getItem() == MoneyItems.euro200)
+			return item.getCount() * 20000;
+		else if (item.getItem() == MoneyItems.euro500)
+			return item.getCount() * 50000;
+
+		return 0;
+	}
 }

@@ -34,7 +34,7 @@ public class RegistryHandler {
 				((IHasModel) item).registerModels();
 			}
 		}
-		
+
 		for (Block block : MoneyBlocks.BLOCKS) {
 			if (block instanceof IHasModel) {
 				((IHasModel) block).registerModels();

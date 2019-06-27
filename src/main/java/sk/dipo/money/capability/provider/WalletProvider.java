@@ -11,7 +11,7 @@ public class WalletProvider implements ICapabilitySerializable<NBTBase> {
 
 	public static final int INV_SIZE = 27;
 	
-	private ItemStackHandler inventory = new ItemStackHandler(27);
+	private ItemStackHandler inventory = new ItemStackHandler(INV_SIZE);
 
 	@Override
 	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {

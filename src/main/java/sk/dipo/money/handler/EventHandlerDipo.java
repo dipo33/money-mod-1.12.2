@@ -31,9 +31,16 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.passive.EntityZombieHorse;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import sk.dipo.money.MoneyMod;
+import sk.dipo.money.database.Database;
+import sk.dipo.money.item.MoneyItems;
 import sk.dipo.money.utils.Config;
 import sk.dipo.money.utils.Utils;
 
@@ -147,5 +154,29 @@ public class EventHandlerDipo {
 			ArrayList<EntityItem> itemsToDrop = Utils.randomCoinValue(event, Config.zombieHorseDropMin, Config.zombieHorseDropMax);
 			event.getDrops().addAll(itemsToDrop);
 		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onPlayerJoin(EntityJoinWorldEvent event) {
+		if (event.getWorld().isRemote)
+			return;
+		if (!(event.getEntity() instanceof EntityPlayer))
+			return;
+
+		EntityPlayer player = (EntityPlayer) event.getEntity();
+
+		if (!MoneyMod.db.exists("Players", player.getUniqueID().toString() + ".Balance")) {
+			MoneyMod.db.set("Players", player.getUniqueID().toString() + ".Balance", 50000);
+			player.inventory.addItemStackToInventory(new ItemStack(MoneyItems.creditCard));
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onWorldLoad(WorldEvent.Load event) {
+		if (event.getWorld().isRemote)
+			return;
+		System.out.println("CreateIt");
+		MoneyMod.db = new Database("dipomoney");
+		MoneyMod.db.put("Players");
 	}
 }

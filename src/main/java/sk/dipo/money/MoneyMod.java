@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import sk.dipo.money.database.Database;
 import sk.dipo.money.proxy.CommonProxy;
 import sk.dipo.money.utils.Reference;
 
@@ -15,6 +16,8 @@ public class MoneyMod {
 
 	@SidedProxy(serverSide = Reference.PROXY_COMMON, clientSide = Reference.PROXY_CLIENT)
 	public static CommonProxy proxy;
+
+	public static Database db;
 
 	@Instance
 	public static MoneyMod instance = new MoneyMod();
