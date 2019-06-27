@@ -12,7 +12,7 @@ public class MoneyBlock extends Block implements IHasModel {
 
 	public MoneyBlock(Material material, String name) {
 		super(material);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(MoneyMod.moneyTab);
 

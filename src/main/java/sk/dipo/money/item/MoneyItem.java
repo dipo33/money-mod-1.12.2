@@ -6,7 +6,7 @@ import sk.dipo.money.MoneyMod;
 public class MoneyItem extends Item implements IHasModel {
 
 	public MoneyItem(String name) {
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(MoneyMod.moneyTab);
 
