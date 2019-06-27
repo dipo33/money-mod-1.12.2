@@ -223,24 +223,26 @@ public class GuiATM extends GuiContainer implements Runnable {
 					dotPos++;
 					withdrawValue = Integer.parseInt((withdrawValue + "") + number);
 					String temp = (withdrawValue + "").substring(0, (withdrawValue + "").length() - dotPos);
-					pinCode = (temp.length() == 0 ? "0" : temp) + "." + (withdrawValue + "").substring((withdrawValue + "").length() - dotPos) + "€";
+					pinCode = (temp.length() == 0 ? "0" : temp) + "." + (withdrawValue + "").substring((withdrawValue + "").length() - dotPos)
+							+ translate("char.atm.euro");
 				} else {
 					withdrawValue = Integer.parseInt((withdrawValue + "") + number);
-					pinCode = withdrawValue + "€";
+					pinCode = withdrawValue + "" + translate("char.atm.euro");
 				}
 			} else {
 				if (dot) {
 					dotPos++;
 					withdrawValue = Integer.parseInt((withdrawValue + "") + number);
 					if (withdrawValue < 10 && dotPos == 2) {
-						pinCode = "0.0" + withdrawValue + "€";
+						pinCode = "0.0" + withdrawValue + translate("char.atm.euro");
 					} else {
 						String temp = (withdrawValue + "").substring(0, (withdrawValue + "").length() - dotPos);
-						pinCode = (temp.length() == 0 ? "0" : temp) + "." + (withdrawValue + "").substring((withdrawValue + "").length() - dotPos) + "€";
+						pinCode = (temp.length() == 0 ? "0" : temp) + "." + (withdrawValue + "").substring((withdrawValue + "").length() - dotPos)
+								+ translate("char.atm.euro");
 					}
 				} else {
 					withdrawValue = number;
-					pinCode = number + "€";
+					pinCode = number + "" + translate("char.atm.euro");
 				}
 			}
 		}

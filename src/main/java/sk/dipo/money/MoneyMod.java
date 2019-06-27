@@ -1,5 +1,8 @@
 package sk.dipo.money;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -16,6 +19,8 @@ public class MoneyMod {
 
 	@SidedProxy(serverSide = Reference.PROXY_COMMON, clientSide = Reference.PROXY_CLIENT)
 	public static CommonProxy proxy;
+	
+	public static final Logger LOGGER = LogManager.getLogger(Reference.MODID);
 
 	public static Database db;
 
