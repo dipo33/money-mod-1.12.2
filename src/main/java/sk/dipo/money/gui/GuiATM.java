@@ -98,7 +98,7 @@ public class GuiATM extends GuiContainer implements Runnable {
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		this.fontRenderer.drawString(atm.getCustomName()/* TODO make it dynamic */, 42, 5, 4210752);
+		this.fontRenderer.drawString(atm.getCustomName(), 42, 5, 4210752);
 		this.fontRenderer.drawString(translate(this.inventoryPlayer.getName()), 42, this.ySize - 93, 4210752);
 		this.fontRenderer.drawString(translate("container.atm_in"), 42, 31, 4210752);
 		this.fontRenderer.drawString(translate("container.atm_out"), 42, 81, 4210752);
