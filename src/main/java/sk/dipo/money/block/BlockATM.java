@@ -8,6 +8,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -15,6 +16,8 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import sk.dipo.money.tileentity.TileEntityATM;
 
 public class BlockATM extends MoneyBlock implements ITileEntityProvider {
@@ -108,5 +111,23 @@ public class BlockATM extends MoneyBlock implements ITileEntityProvider {
 	@Override
 	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, new IProperty[] { FACING });
+	}
+
+	@Override
+	public void breakBlock(World world, BlockPos pos, IBlockState state) {
+		if (world.getTileEntity(pos) instanceof TileEntityATM) {
+			TileEntityATM te = (TileEntityATM) world.getTileEntity(pos);
+			IItemHandler cap = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+
+			for (int i = 0; i < cap.getSlots(); ++i) {
+				ItemStack itemstack = cap.getStackInSlot(i);
+
+				if (!itemstack.isEmpty()) {
+					InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), itemstack);
+				}
+			}
+		}
+
+		super.breakBlock(world, pos, state);
 	}
 }
