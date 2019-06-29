@@ -23,6 +23,9 @@ public class BlockATM extends MoneyBlock implements ITileEntityProvider {
 
 	public BlockATM(String name) {
 		super(Material.IRON, name);
+		setHardness(2F);
+		setResistance(18000000F);
+		setHarvestLevel("pickaxe", 0);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 
