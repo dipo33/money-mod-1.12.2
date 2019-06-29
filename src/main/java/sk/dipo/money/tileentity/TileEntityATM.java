@@ -47,6 +47,7 @@ public class TileEntityATM extends TileEntity implements ICapabilityProvider {
 			EntityItem item = new EntityItem(player.world, x, y, z, stack);
 			player.world.spawnEntity(item);
 		}
+		markDirty();
 	}
 
 	public int depositMoney(EntityPlayer player) {
@@ -58,25 +59,42 @@ public class TileEntityATM extends TileEntity implements ICapabilityProvider {
 			inventory.extractItem(i, 64, false);
 			((EntityPlayerMP) player).connection.sendPacket(new SPacketSetSlot(player.openContainer.windowId, i, ItemStack.EMPTY));
 		}
+		markDirty();
 
 		return balance;
 	}
 
 	@Override
+	public NBTTagCompound getUpdateTag() {
+		NBTTagCompound nbt = super.getUpdateTag();
+		if (hasCustomName()) {
+			nbt.setString("CustomName", this.customName);
+		}
+		return nbt;
+	}
+
+	@Override
+	public void handleUpdateTag(NBTTagCompound tag) {
+		if (tag.hasKey("CustomName"))
+			this.customName = tag.getString("CustomName");
+		super.handleUpdateTag(tag);
+	}
+
+	@Override
 	public void readFromNBT(NBTTagCompound compound) {
-		if (compound.hasKey("CustomName", 8)) {
+		this.inventory.deserializeNBT(compound.getCompoundTag("Inventory"));
+		if (compound.hasKey("CustomName")) {
 			this.customName = compound.getString("CustomName");
 		}
-		this.inventory.deserializeNBT(compound.getCompoundTag("Inventory"));
 		super.readFromNBT(compound);
 	}
 
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		compound.setTag("Inventory", this.inventory.serializeNBT());
 		if (this.hasCustomName()) {
 			compound.setString("CustomName", this.customName);
 		}
-		compound.setTag("Inventory", this.inventory.serializeNBT());
 		return super.writeToNBT(compound);
 	}
 
@@ -122,7 +140,7 @@ public class TileEntityATM extends TileEntity implements ICapabilityProvider {
 	public void setCustomName(String customName) {
 		this.customName = customName;
 	}
-	
+
 	public boolean hasCustomName() {
 		return customName != null && customName.length() > 0;
 	}

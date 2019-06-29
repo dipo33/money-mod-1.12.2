@@ -62,12 +62,10 @@ public class ContainerATM extends Container {
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
 
-			if (index < INV_START) {
+			if (index < INV_START) { // CLICKED INV OF ATM
 				if (!this.mergeItemStack(itemstack1, INV_START, HOTBAR_END + 1, true)) {
 					return ItemStack.EMPTY;
 				}
-
-				slot.onSlotChange(itemstack1, itemstack);
 			} else {
 				SlotATMInput slotOut = (SlotATMInput) this.inventorySlots.get(0);
 				if (slotOut.isItemValid(itemstack1)) {
@@ -77,17 +75,11 @@ public class ContainerATM extends Container {
 				}
 			}
 
-			if (itemstack1.getCount() == 0) {
+			if (itemstack1.isEmpty()) {
 				slot.putStack(ItemStack.EMPTY);
 			} else {
 				slot.onSlotChanged();
 			}
-
-			if (itemstack1.getCount() == itemstack.getCount()) {
-				return ItemStack.EMPTY;
-			}
-
-			slot.onTake(player, itemstack1);
 		}
 
 		return itemstack;
