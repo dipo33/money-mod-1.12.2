@@ -1,0 +1,40 @@
+item.cent1.name=0,01€
+item.cent2.name=0,02€
+item.cent5.name=0,05€
+item.cent10.name=0,10€
+item.cent20.name=0,20€
+item.cent50.name=0,50€
+item.euro1.name=1,00€
+item.euro2.name=2,00€
+item.euro5.name=5,00€
+item.euro10.name=10,00€
+item.euro20.name=20,00€
+item.euro50.name=50,00€
+item.euro100.name=100,00€
+item.euro200.name=200,00€
+item.euro500.name=500,00€
+item.wallet.name=Portafoglio
+item.credit_card.name=Carta di credito
+
+tile.atm.name=Sportello ATM
+
+itemGroup.money_tab=Dipo's Money Mod
+
+entity.Villager.exchanger=Scambiatore
+
+container.atm=Sportello ATM
+container.atm_in=Input
+container.atm_out=Output
+
+msg.atm.in_use=Qualcuno sta già usando lo sportello, dovrai aspettare.
+msg.atm.not_signed=La tua carta di credito non è firmata! Vuoi firmarla? (Conferma col pulsante verde)
+msg.atm.create_pin=Benvenuto/a! Inserisci il tuo nuovo PIN di 4 cifre che verrà assegnato a questa carta di credito. (Conferma col pulsante verde)
+msg.atm.login=Benvenuto/a @s! Digita il PIN per continuare. (Conferma col pulsante verde)
+msg.atm.bad_login=PIN errato. Attento/a, ti rimangono solo @s tentativi. (Conferma col pulsante verde)
+msg.atm.card_eaten=La tua carta di credito è stata annullata in seguito a 3 tentativi errati. Puoi costruirne una nuova con un lingotto d'oro, 5€ e pietrarossa.
+msg.atm.signed_login=PIN creato. Inserisci il PIN per continuare. (Conferma col pulsante verde)
+msg.atm.welcome=Your balance: @s€
+
+char.atm.arrow_1=⬆
+char.atm.arrow_2=⬇
+char.atm.euro=€
